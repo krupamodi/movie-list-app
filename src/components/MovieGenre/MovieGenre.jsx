@@ -4,9 +4,12 @@ import './MovieGenre.scss';
 import logo from '/logo.svg';
 
 const MovieGenre = ({ selectedGenres, onGenreChange }) => {
+
+  // state for genres data
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
+    // function for fetch genre list
     const fetchGenres = async () => {
       try {
         const response = await axios.get('https://api.themoviedb.org/3/genre/movie/list', {
